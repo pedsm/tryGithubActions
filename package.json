@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "serve dist -l 80",
+    "start": "serve dist -l $PORT",
     "prestart": "npm run build",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
