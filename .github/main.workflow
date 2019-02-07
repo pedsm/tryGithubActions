@@ -26,5 +26,5 @@ action "Lint Json" {
 action "Build Vue app" {
   uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
   needs = ["Lint Vue", "Lint Json"]
-  args = "build"
+  args = "run build"
 }
