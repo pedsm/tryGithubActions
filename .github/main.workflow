@@ -2,7 +2,7 @@ workflow "Test and deploy" {
   on = "push"
   resolves = [
     "Lint Json",
-    "Build Vue app",
+    "Push to Heroku",
   ]
 }
 
@@ -29,23 +29,16 @@ action "Build Vue app" {
   args = "run build"
 }
 
-action "login" {
-  uses = "actions/heroku@master"
-  args = "container:login"
+action "Login to Heroku" {
+  uses = "actions/heroku@9b6266f8ca2b26bc846af2547b2b11ad8a696223"
   needs = ["Build Vue app"]
+  args = "container:login"
   secrets = ["HEROKU_API_KEY"]
 }
 
-action "push" {
-  uses = "actions/heroku@master"
-  needs = "login"
-  args = "container:push -a calm-fortress-1234 web"
-  secrets = ["HEROKU_API_KEY"]
-}
-
-action "release" {
-  uses = "actions/heroku@master"
-  needs = "push"
-  args = "container:release -a calm-fortress-1234 web"
+action "Push to Heroku" {
+  uses = "actions/heroku@9b6266f8ca2b26bc846af2547b2b11ad8a696223"
+  needs = ["Login to Heroku"]
+  args = "container:push -a try-github-actions web"
   secrets = ["HEROKU_API_KEY"]
 }
