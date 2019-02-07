@@ -2,7 +2,7 @@ workflow "Test and deploy" {
   on = "push"
   resolves = [
     "Lint Json",
-    "Push to Heroku",
+    "Deploy to Heroku",
   ]
 }
 
@@ -39,6 +39,13 @@ action "Login to Heroku" {
 action "Push to Heroku" {
   uses = "actions/heroku@9b6266f8ca2b26bc846af2547b2b11ad8a696223"
   needs = ["Login to Heroku"]
-  args = "container:push -a try-github-actions web"
+  args = "container:push -a try-github-action web"
   secrets = ["HEROKU_API_KEY"]
+}
+
+action "Deploy to Heroku" {
+  uses = "actions/heroku@9b6266f8ca2b26bc846af2547b2b11ad8a696223"
+  needs = ["Push to Heroku"]
+  secrets = ["HEROKU_API_KEY"]
+  args = "container:release -a try-github-action web"
 }
