@@ -6,6 +6,7 @@
 </template>
 
 <script>
+const { error } = console
 export default {
   name: 'User',
   props: {
@@ -18,7 +19,7 @@ export default {
       fetch(`https://api.github.com/users/${this.username}`)
         .then(res => res.json())
         .then(json => this.userInfo = json)
-        .catch(e => console.error(e))
+        .catch(e => error(e))
   }
 }
 </script>
