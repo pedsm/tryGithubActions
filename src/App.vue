@@ -7,7 +7,7 @@
     </p>
     <p>If you would like to get more information about this project make sure to check out the links below</p>
     <a href="https://github.com/pedsm/tryGithubAction">GitHub repo</a>
-    <!--  TODO: Updated this    -->
+    <!--  TODO: Update this    -->
     <br/>
     <a href="#">Blog Post(coming soon)</a>
 
@@ -41,6 +41,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#userContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
 }
 a {
   color: #58CCED;
