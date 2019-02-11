@@ -13,16 +13,13 @@ export default {
     username: String
   },
   data: () => ({
-    // userInfo: null
-    userInfo: {
-      avatar_url: `https://picsum.photos/100/100/?random`
-    }
+    userInfo: null
   }),
   created() {
-      // fetch(`https://api.github.com/users/${this.username}`)
-      //   .then(res => res.json())
-      //   .then(json => this.userInfo = json)
-      //   .catch(e => error(e))
+      fetch(`https://api.github.com/users/${this.username}`)
+        .then(res => res.json())
+        .then(json => this.userInfo = json)
+        .catch(e => error(e))
   }
 }
 </script>
