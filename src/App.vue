@@ -6,15 +6,16 @@
       Hosted on <a href="https://heroku.com">Heroku</a>
     </p>
     <p>If you would like to get more information about this project make sure to check out the links below</p>
-    <a href="https://github.com/pedsm/tryGithubAction">GitHub repo</a>
-    <!--  TODO: Update this    -->
-    <br/>
-    <a href="#">Blog Post(coming soon)</a>
+    <a href="#">A first look at GitHub Actions with Heroku</a>
 
     <h2>Contributors</h2>
+    <a href="https://github.com/pedsm/tryGithubActions">Join the list</a>
     <div id="userContainer"> 
       <user v-for="user in users" :key="user" :username="user"/>
     </div>
+    <a href="https://github.com/pedsm/tryGithubActions">
+      <i class="fa-3x fab fa-github"></i>
+    </a>
   </div>
 </template>
 
