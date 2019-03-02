@@ -6,7 +6,7 @@
       Hosted on <a href="https://heroku.com">Heroku</a>
     </p>
     <p>If you would like to get more information about this project make sure to check out the links below</p>
-    <a href="#">A first look at GitHub Actions with Heroku</a>
+    <a href="#">A first look at GitHub Actions with Heroku</a>
 
     <h2>Contributors</h2>
     <a href="https://github.com/pedsm/tryGithubActions">Join the list</a>
